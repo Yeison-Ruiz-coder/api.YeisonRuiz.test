@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ConsultasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('area', ConsultasController::class);
+Route::apiResource('city', ConsultasController::class);
+Route::apiResource('company', ConsultasController::class);
+Route::apiResource('country', ConsultasController::class);
+Route::apiResource('graduates', ConsultasController::class);
+Route::apiResource('title', ConsultasController::class);
+Route::apiResource('state', ConsultasController::class);
